@@ -1,6 +1,10 @@
 {
+    //Discrimnated Union.
+    //동일한 키에 다른 값을 넣어줘야 한다. 
+
+    
   type SuccessState = {
-    result: "success"; // key를? type을 'success'로 준다.
+    result: "success"; // 동일한 result라는 key에 type이 문자열인 'success'를 준다. 실패에는 'fail'
     response: {
       body: string;
     };
