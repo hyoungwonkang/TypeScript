@@ -11,10 +11,7 @@
   type TileSize = 8 | 16 | 32;
   const tile: TileSize = 16; //
 
-  // type LoginCase = success:'res' | fail:'try again';
-  // const login: LoginCase = success
-
-  //function: login -> success, fail
+  //function: login -> success, fail // 이러한 함수를 만든 다면?
   // Type을 먼저 정하고 함수 설정!!
   type SuccessState = {
     response: {
@@ -25,9 +22,10 @@
     reason: string;
   };
 
-  // function loing(): SuccessState | FailState{
+  // function login(): SuccessState | FailState //이러한 결과를 원할 것입니다!
 
-  type LoginState = SuccessState | FailState;
+  type LoginState = SuccessState | FailState; // SuccessState와 FailState를 먼저 Union으로 설정합니다.
+
   // function login(id: string, password: string): Promise<LoginState> {      //일반적으로 LoginState가 아니라 네트워크통신을 하는 비동기로 해야하니 Promise를 쓴다.
   function login(): LoginState {
     //하지만 여기서는 배우느 단계이니 아직 LoginState만 씀.
@@ -53,14 +51,4 @@
       console.log(`울음 ${state.reason}`); // 타스는 두개만 있는걸 알아서, 나머지 하나를 추천해준다.
     }
   }
-
-  // type printLoginState(state:LoginState) = SuccessState | FailState;
-  // function login (): printLoginState {
-  //     return{
-  //         response:{
-  //             body: '축하'
-  //         }
-  //         console.log(response)
-  //     }
-  // }
 }
