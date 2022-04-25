@@ -12,7 +12,7 @@
   };
   const student: Student = {
     // 타입을 지정한 것들만 가능.
-    // animal: 'cat'
+    // animal: 'cat'    // 타입 지정 안해서 안됨.
     name: "ellie",
     age: 12,
   };
