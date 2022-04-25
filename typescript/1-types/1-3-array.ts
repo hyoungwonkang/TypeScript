@@ -6,7 +6,7 @@
     // readonly를 사용하려면 string 다음에 배열 표시가 있는 문법이용.
     // 즉 불변성 때문에 꺽쇠 <>보다 string[]을 사용하는 경우가 더 많음.
   }
-  //Tuple     //서로 다른 타입의 데이터를 배열에 담을 수 있음
+  //Tuple     //서로 다른 타입의 데이터를 배열에 담을 수 있음   //리액트에서 useState를 쓸 때 씁니다!
   let student: [string, number];
   student = ["name", 123];
   student[0]; // name
