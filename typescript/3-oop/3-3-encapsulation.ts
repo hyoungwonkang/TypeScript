@@ -59,10 +59,52 @@
   //외부에서 나의 오브젝트 상태를 유효하지 않은 상태로 만들 수 있습니다!
   //   maker.coffeeBeans = -34; //invalid
 
-  // private을 사용하여서 이걸로 사용합니다.
-  maker.fillCoffeBeans(32);
-
   //constructor가 private되어서 ()를 못씁니다!
   //CoffeeMaker 쓴 후 .을 눌러서 쓸 수 있는 함수 확인!
   const maker = CoffeeMaker.makeMachine(32);
+
+  // public을 사용했을 때와 비교하여 private을 사용하여서 이걸로 사용합니다.
+  maker.fillCoffeBeans(32);
+
+  /*
+  유용한 Getter와 Setter*/
+
+  class User {
+    // firstName: string;
+    // lastName: string;
+
+    //fullName을 호출하는 시점에 firstName과 lastName을 결합할 수 있음.
+    //멤버변수에 접근하려면 ()를 빼고 접근해야 합니다!
+    get fullName(): string {
+      return `${this.firstName} ${this.lastName}`;
+    }
+
+    //게터와 세터 추가 사항!!
+    private internalAge = 4;
+    get age(): number {
+      return this.internalAge;
+    }
+    set age(num: number) {
+      if (num < 0) {
+        throw new Error("ages should be bigger than 0");
+      }
+      this.internalAge = num;
+    }
+    //public
+    // constructor(firstName: string, lastName: string) {
+    //멤버변수를 초기화 해줍니다.
+    //   this.firstName = firstName;
+    //   this.lastName = lastName;
+
+    //private
+    constructor(private firstName: string, private lastName: string) {}
+  }
+  const user = new User("Steve", "Jobs");
+  //user.을 찍어보면 user의 internalAge에는 접속할 수 없고(private) age라는 멤버변수처럼 보이지만
+  // 사실 getter와 setter을 이용한 age를 쓸 수 있다.
+  user.age = 6; //internalAge를 6으로 업데이트
+  console.log(user.age);
+  console.log(user.fullName);
+  //   user.firstName = "Ellie";
+  console.log(user.fullName); // 그대로 스티브 잡스. 왜냐하면 fullName이 이미 한 번 지정되었기 때문.
 }
