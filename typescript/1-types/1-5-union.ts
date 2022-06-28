@@ -1,15 +1,15 @@
 {
-  //Union Types : OR      //모든 가능한 케이스 중에 발생할 수 있는 것들 중 딱 하나의 타입을 만들고 싶을 때 .
+  //Union Types      //모든 가능한 케이스 중에 발생할 수 있는 것들 중 딱 하나의 타입을 만들고 싶을 때 .
 
   type Direction = "left" | "right" | "up" | "down"; // 위치 넣음
   function move(direction: Direction) {
     // direction이라는 인자는 Direction이라는 Type을 갖음.
     console.log(direction);
   }
-  move("down");
+  move('');  // 자동으로 인자를 보여줌(여기서는 스트링 리터럴들)
 
   type TileSize = 8 | 16 | 32;
-  const tile: TileSize = 16; //
+  const tile: TileSize = ; // 인자들은 넘버들
 
   //function: login -> success, fail // 이러한 함수를 만든 다면?
   // Type을 먼저 정하고 함수 설정!!
@@ -39,16 +39,18 @@
 
   // 퀴즈. discriminated union을 쓰기 위한 전초 코드.
   // printLoginState(state)
-  // success -> 축하 body
-  // fail -> 울음 reason
+  // success -> 🎉 body
+  // fail -> 😭 reason
 
   // Type은 명시한 LoginState. state는 인자.
   function printLoginState(state: LoginState): void {
     //void 생략 가능
     if ("response" in state) {
-      console.log(`축하 ${state.response.body}`);
+      console.log(`🎉 ${state.response.body}`);
     } else {
-      console.log(`울음 ${state.reason}`); // 타스는 두개만 있는걸 알아서, 나머지 하나를 추천해준다.
+      console.log(`😭 ${state.reason}`); // 타스는 두개만 있는걸 알아서, 나머지 하나를 적으면 된다.
     }
   }
 }
+
+//discrimination: 차별화되는 이름이 동일한 타입을 둬서 구분할 수 있는 것.
