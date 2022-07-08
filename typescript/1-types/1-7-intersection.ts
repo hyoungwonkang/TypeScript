@@ -17,9 +17,9 @@
   }
 
   internWork({
-    name: "ellie",
-    score: 1, // 여기까지 작성했으면 student만 되므로 오류가 뜹니다!
+    name: 'luke',
+    score: 1,
     employeeId: 123,
-    work: () => {}, //여기까지 작성했으면 인제 오류가 안뜨죠!
-  });
+    work: () => {},
+  })
 }
