@@ -45,7 +45,7 @@
   // Type은 명시한 LoginState. state는 인자.
   function printLoginState(state: LoginState): void {
     //void 생략 가능
-    if ("response" in state) {
+    if ("response" in state) {  //response라는 key가 state 안에 있다면
       console.log(`🎉 ${state.response.body}`);
     } else {
       console.log(`😭 ${state.reason}`); // 타스는 두개만 있는걸 알아서, 나머지 하나를 적으면 된다.
