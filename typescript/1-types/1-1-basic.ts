@@ -1,6 +1,9 @@
 {
-  // Primitive: number, string, booolean, symbol, null, undefined
-  // Object: function, Array
+  /**
+   *  JavaScript에서 쓰이는 큰 두 타입
+   * Primitive: number, string, boolean, bigint, symbol, null, undefined
+   * Object: function, array......
+   */
 
   //number
   const num: number = -5;
@@ -12,19 +15,19 @@
   const boal: boolean = false;
 
   //undefined
-  // let name: undefined;
+  // let name: undefined; 💩
   // name='hello';  💩
-  let age: number | undefined; // 옵셔널 타입
+  let age: number | undefined; // '또는' 옵셔널 타입
   age = undefined;
   age = 1;
   function find(): number | undefined {
     // 찾으면 숫자, 없으면 undefined
-    return 1; //숫자를 리턴하거나
-    // return undefined;       //undefined를 리턴합니다!
+    // return 1; //숫자를 리턴하거나
+    return undefined; //undefined를 리턴합니다!
   }
 
   //null
-  // let person: null;
+  // let person: null; 💩
   // person = null;
   // person = 1;   💩
   let person2: string | null;
@@ -44,13 +47,13 @@
     console.log("hello");
     return; // 리턴값이 없을 때 씀.
   }
-  let unusable: void = undefined; //  활용성이 없어 이렇게 선언하지 않는다!
+  let unusable: void = undefined; //  변수에 void 선언은 활용성이 없어 이렇게 선언하지 않는다!
 
   // never       절대 다른것을 리턴할 수 없다.
   function throwError(message: string): never {
-    //message -> server (log)
+    //message -> server (log) 발생된 에러메세지를 서버로 보내서 로그를 남기고 어플리케이션에서 에러를 남길 수 있다.
     throw new Error(message);
-    while (true) {} //무한 루프로 끝내지 않게 한다.
+    while (true) {} //Unreachable 무한 루프로 끝내지 않게 한다.
   }
   //   let neverEnding: never;         절대 사용하지 않음
 
