@@ -1,5 +1,5 @@
 {
-  /** Type Aliases
+  /** Type Alias
    */
 
   type Text = string;
